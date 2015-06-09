@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Proj_web.Models.Shop>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form name="Admin_add" method="post" >
+        <div>
+            
+            <table>
+@foreach (var item in Model)
+                            {
+                <tr>
+                    <td>
+                        <input type="hidden" name="Id" value="@item.Id" />
+                        <p>Название</p><input id="val" value="@item.Name" type="Text" class="textblock" name="Name" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Адрес магазина</p><input id="Address" value="@item.Address" type="Text" class="textblock" name="Address" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Телефон</p><input id="Phone" value="@item.Phone" type="Text" class="textblock" name="Phone" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>e-mail</p><input id="E_mail" type="Text" value="@item.E_mail" class="textblock" name="E_mail" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Сайт магазина</p><input id="in_adress" type="Text" value="@item.in_adress" class="textblock" name="in_adress" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+     <tr>
+                    <td>
+                        <p>Координатa X</p><input id="time" type="Text" value="@item.CoordinatesX" class="textblock" name="Coordinates" maxlength="40" size="100" align="right">
+                    </td>
+                </tr>
+    
+    <tr>
+        <td>
+            <p>Координатa Y</p><input id="time" type="Text" value="@item.CoordinatesY" class="textblock" name="Coordinates" maxlength="40" size="100" align="right">
+</td>
+    </tr>
+    
+                <tr>
+                    <td>
+
+                        <input type="submit" class="but" value=" Сохранить " class="textblock" name="SRCH" maxlength="40" width="50" align="right">
+
+                    </td>
+                </tr>
+}
+            </table>
+        </div>
+    </form>
+</body>
+</html>
