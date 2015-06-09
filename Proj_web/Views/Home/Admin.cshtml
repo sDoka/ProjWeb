@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Proj_web.Models.Shop>
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = Layout = null; ;
 }
 
 <!DOCTYPE html>
@@ -10,11 +10,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>admin</title>
+    <title>Страница Администрирования</title>
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/adminPage.css" />
 </head>
 <body>
     <div>      
-                        <table width="100%" height="100%" cellspacing="0">
+                        <table  cellspacing="0">
 
                             
                             @foreach (var item in Model)
@@ -24,7 +25,7 @@
                                     <td valign="top">@item.Name</td>
                                     <td valign="top"> 
                                     @Html.ActionLink("Изменить", "Edit", new { item.Id })</td>                                    
-                                    <td valign="top">
+                                    <td valign="top" onclick="">
                                         @using (Html.BeginForm("Admin_del", "Home"))
                                         {
                                             @Html.Hidden("Id", item.Id)
@@ -35,10 +36,16 @@
                                     </td>
                                 </tr>
                             }
-                        </table>                                                
-        @Html.ActionLink("Добавить магазин", "Create")
-        
-    </div>
+                        </table>    
+        <table cellspacing="0">
+            <tr>
+                <td>
+                @Html.ActionLink("Добавить магазин", "Create")
+            </tr>
+        </table>
+
+
+</div>
 </body>
 </html>
 }

@@ -64,6 +64,8 @@ namespace Proj_web.Controllers
             return RedirectToAction("Admin");
         }
         [HttpGet]
+       
+        
         public ActionResult Edit(int Id)
         {
             IEnumerable<Shop> shops = db.Shops.Where(a => a.Id == Id);
